@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -7,26 +7,46 @@ import {
   TextInput,
 } from "react-native";
 
+import { FontAwesome } from "@expo/vector-icons";
+
 export default function FormTask({ addTitle }) {
   const [title, setTitle] = useState("");
-
+  const [currentDate, setCurrentDate] = useState("");
   function handleAddTitle() {
     addTitle(title);
     setTitle("");
   }
 
+  useEffect(() => {
+    const currentDate = new Date();
+    const options = {
+      weekday: "long",
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    };
+    const formatedDate = currentDate.toLocaleDateString("pt-BR", options);
+    setCurrentDate(formatedDate);
+  }, []);
+
   return (
     <View style={styles.formContainer}>
-      {/* Deixar essa data dinâmica, pegando data do sistema */}
-      <Text style={styles.text}>Sexta-Feira, 26 de julho de 2024</Text>
+      <Text style={styles.text}>{currentDate}</Text>
       <View style={styles.taskForm}>
         <TextInput
           style={styles.taskInput}
+          placeholder="Incluir nova tarefa"
           onChangeText={(title) => setTitle(title)}
+          onSubmitEditing={handleAddTitle}
           value={title}
         />
         <TouchableOpacity style={styles.addButton} onPress={handleAddTitle}>
-          <Text>+</Text>
+          <FontAwesome
+            name="plus"
+            size={20}
+            color="#fff"
+            style={styles.buttonIcon}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -59,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "#70D17E",
-    padding: 8,
+    padding: 10,
     borderRadius: 12,
   },
 });

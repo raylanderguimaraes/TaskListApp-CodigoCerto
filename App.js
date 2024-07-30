@@ -18,7 +18,7 @@ export default function App() {
     Roboto_900Black,
   });
 
-  if (!fonstLoaded && fontsError) {
+  if (!fonstLoaded && !fontsError) {
     return null;
   }
 
