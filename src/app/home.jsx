@@ -6,6 +6,7 @@ import { Fontisto } from "@expo/vector-icons";
 
 import Header from "../components/Header";
 import FormTask from "../components/FormTask";
+import TaskItem from "../components/TaskItem";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -20,11 +21,26 @@ export default function Home() {
       const taskObject = {
         id: uuid.v4(),
         title: title,
+        completed: false,
       };
       const newTask = taskObject;
       setTasks([...tasks, newTask]);
     }
   }
+
+  function handleDeleteTask(taskId) {
+    setTasks(tasks.filter((task) => task.id !== taskId));
+  }
+
+  function handleCompleteTask(taskId) {
+    setTasks(
+      tasks.map((task) =>
+        task.id === taskId ? { ...task, completed: !task.completed } : task
+      )
+    );
+  }
+
+  console.log(tasks);
 
   return (
     <View style={styles.container}>
@@ -39,9 +55,18 @@ export default function Home() {
       ) : (
         <View style={styles.listContainer}>
           <FlatList
+            style={styles.itemList}
             data={tasks}
-            renderItem={({ item }) => <Text>{item.title}</Text>}
             keyExtractor={(item) => item.id}
+            showsVerticalScrollIndicator={false}
+            renderItem={({ item }) => (
+              <TaskItem
+                title={item.title}
+                completed={item.completed}
+                onComplete={() => handleCompleteTask(item.id)}
+                onDelete={() => handleDeleteTask(item.id)}
+              />
+            )}
           />
         </View>
       )}
@@ -66,9 +91,15 @@ const styles = StyleSheet.create({
   emptyList: {
     flex: 1,
     alignItems: "center",
-    marginTop: 200,
+    marginTop: 150,
+    width: "100%",
   },
   listContainer: {
-    marginTop: 40,
+    flex: 1,
+    width: "100%",
+    alignItems: "center",
+  },
+  itemList: {
+    width: "90%",
   },
 });

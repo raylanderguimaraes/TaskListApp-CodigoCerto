@@ -12,6 +12,8 @@ import { FontAwesome } from "@expo/vector-icons";
 export default function FormTask({ addTitle }) {
   const [title, setTitle] = useState("");
   const [currentDate, setCurrentDate] = useState("");
+  
+  
   function handleAddTitle() {
     addTitle(title);
     setTitle("");
@@ -57,6 +59,7 @@ const styles = StyleSheet.create({
   formContainer: {
     width: "90%",
     alignItems: "center",
+    marginBottom: 30,
   },
   text: {
     fontFamily: "Roboto_400Regular",
