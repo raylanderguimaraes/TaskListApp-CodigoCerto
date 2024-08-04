@@ -7,8 +7,7 @@ import {
   Roboto_900Black,
   useFonts,
 } from "@expo-google-fonts/roboto";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {

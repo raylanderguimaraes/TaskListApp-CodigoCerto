@@ -70,17 +70,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 20,
+    width: "20%",
   },
 
   titleTask: {
+    width: "80%",
     fontFamily: "Roboto_400Regular",
     fontSize: 16,
   },
   complete: {
+    width: "80%",
     textDecorationLine: "line-through",
     fontSize: 16,
     fontFamily: "Roboto_400Regular",
   },
 });
-
-// pensar numa forma de quebrar a linha sem quebrar o layout
