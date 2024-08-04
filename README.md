@@ -18,7 +18,7 @@ Este projeto tem como objetivo principal desenvolver um aplicativo de lista de t
 
 - Clone o repositório
 - `cd TaskListApp`
-- Necessário term nodejs versão LTS instalada na máquina
+- Necessário ter o nodejs versão LTS instalada na máquina
 - Necessário Android Studio
 - Rodar comando `npm install` para instalar todas as dependências
 - Rodar comando `npm start` para executar o projeto
@@ -27,4 +27,4 @@ Este projeto tem como objetivo principal desenvolver um aplicativo de lista de t
 ## Abrir em um dispositivo físico
 
 - Baixe o app Expo Go
-- Escaneie com a camera do dispositivo o QR code que aparece no terminal ao rodar o comando `npm start`
+- Escaneie com a câmera do dispositivo o QR code que aparece no terminal ao rodar o comando `npm start`

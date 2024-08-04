@@ -1,14 +1,5 @@
 import { useEffect, useState } from "react";
-
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Alert,
-  Button,
-  ScrollView,
-} from "react-native";
+import { View, Text, StyleSheet, FlatList, Alert } from "react-native";
 import uuid from "react-native-uuid";
 import { Fontisto } from "@expo/vector-icons";
 

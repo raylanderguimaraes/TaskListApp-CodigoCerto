@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Home from "./src/app/home";
 import {
@@ -7,7 +7,6 @@ import {
   Roboto_900Black,
   useFonts,
 } from "@expo-google-fonts/roboto";
-
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
