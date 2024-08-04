@@ -8,9 +8,11 @@ Este projeto tem como objetivo principal desenvolver um aplicativo de lista de t
 
 ## Imagens do projeto
 
-<img src="./images/home.jpeg" alt="Alt text" width="200" >
-<img src="./images/tasks.jpeg" alt="Alt text" width="200" >
-<img src="./images/keyboard.jpeg" alt="Alt text" width="200" >
+<div style="display: flex; gap: 10px;">
+  <img src="./images/home.jpeg" alt="Home Screen" width="200">
+  <img src="./images/tasks.jpeg" alt="Tasks Screen" width="200">
+  <img src="./images/keyboard.jpeg" alt="Keyboard Screen" width="200">
+</div>
 
 ## Instalação
 
